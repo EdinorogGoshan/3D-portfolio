@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Проекты</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/projects.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="back-arrow" onclick="history.back()">
+                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Логотип">
+                </a>
+            </div>
+            <div class="header-buttons">
+                <button class="btn-contact" id="contactBtn">Связаться</button>
+                <div class="btn-menu" id="menuBtn">
+                    <span class="menu-text">Меню</span>
+                    <div class="menu-icon">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="burger-dropdown" id="burgerDropdown">
+                    <div class="burger-menu">
+                        <a href="index.html">
+                            <span>Главная</span>
+                            <span class="indicator">→</span>
+                        </a>
+                        <a href="about.html">
+                            <span>Обо мне</span>
+                            <span class="indicator">→</span>
+                        </a>
+                        <a href="projects.html">
+                            <span>Проекты</span>
+                            <span class="indicator">●</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu">
+            <button class="mobile-menu-close" id="mobileMenuClose"></button>
+            <div class="burger-menu">
+                <a href="index.html">
+                    <span>Главная</span>
+                    <span class="indicator">→</span>
+                </a>
+                <a href="about.html">
+                    <span>Обо мне</span>
+                    <span class="indicator">→</span>
+                </a>
+                <a href="projects.html">
+                    <span>Проекты</span>
+                    <span class="indicator">●</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <section class="projects-section">
+            <h1>Проекты</h1>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Проекты будут добавлены через JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-divider"></div>
+        <div class="footer-content">
+            <div class="footer-col">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Логотип">
+                </a>
+                <a href="mailto:vikkisis88@gmail.com" class="footer-email">vikkisis88@gmail.com</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-year">2026</div>
+                <div class="footer-author">Комар Виктория</div>
+            </div>
+            
+            <div class="footer-col">
+                <a href="https://t.me/Little_Dirty_Snake" target="_blank">
+                    <img src="images/tg.png" alt="Telegram">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <h3>Связаться со мной</h3>
+            <p>Email: vikkisis88@gmail.com<br>Или в <a href="https://t.me/Little_Dirty_Snake" target="_blank">Telegram</a></p>
+            <button class="modal-close" id="closeModalBtn">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Кнопка наверх -->
+    <button class="scroll-top" id="scrollTopBtn">↑</button>
+
+    <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+</html>

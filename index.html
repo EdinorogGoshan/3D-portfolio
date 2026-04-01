@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>VIKKI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ========== СТИЛИ ГЛАВНОЙ СТРАНИЦЫ ========== */
+        
+/* ========== СТИЛИ ГЛАВНОЙ СТРАНИЦЫ ========== */
+
+/* Hero секция */
+.hero-wrapper {
+    padding: 0 68px;
+    margin: 108px 0 0;
+    height: auto;
+    min-height: auto;
+}
+
+.hero-3d {
+    width: 100%;
+    height: 78vh;
+    min-height: 500px;
+    max-height: 1000px;
+    background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-3d::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(82, 72, 156, 0.2), transparent);
+    animation: pulse 4s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: clamp(28px, 5vw, 64px);
+    margin-top: 10%;
+    margin-bottom: 256px;
+    font-family: 'Neutral Face', sans-serif;
+}
+
+.hero-content .btn {
+    background: #52489C;
+    border: none;
+    border-radius: 72px;
+    padding: 16px 40px;
+    color: #F4F4F4;
+    font-size: clamp(16px, 3vw, 24px);
+    font-weight: 500;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    margin-top: 72px;
+}
+
+.hero-content .btn:hover {
+    transform: scale(1.05);
+}
+
+/* Адаптив для мобильных устройств */
+@media (max-width: 768px) {
+    .hero-wrapper {
+        padding: 0 20px;
+        margin: 80px 0 0;
+    }
+    
+    .hero-3d {
+        height: 60vh;
+        min-height: 450px;
+        max-height: 550px;
+        border-radius: 12px;
+    }
+    
+    .hero-content h1 {
+        margin-bottom: 120px;
+        font-size: clamp(24px, 6vw, 40px);
+    }
+    
+    .hero-content .btn {
+        padding: 14px 32px;
+        border-radius: 60px;
+        font-size: clamp(14px, 4vw, 18px);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-wrapper {
+        padding: 0 16px;
+        margin: 70px 0 0;
+    }
+    
+    .hero-3d {
+        height: 50vh;
+        min-height: 400px;
+        max-height: 500px;
+        border-radius: 10px;
+    }
+    
+    .hero-content h1 {
+        margin-bottom: 80px;
+        font-size: clamp(20px, 7vw, 32px);
+    }
+    
+    .hero-content .btn {
+        padding: 12px 28px;
+        border-radius: 50px;
+        font-size: clamp(12px, 4vw, 16px);
+    }
+}
+
+        /* Секция проектов */
+        .projects {
+            margin: 160px 0 0;
+            padding: 0 68px;
+        }
+
+        .projects .grid-container {
+            max-width: calc(168px * 12 + 24px * 11);
+            margin: 0 auto;
+        }
+
+        .projects .grid-container h2 {
+            font-size: clamp(28px, 5vw, 64px);
+            font-family: 'Neutral Face', sans-serif;
+            margin-bottom: 80px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .project-card {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 1128 / 576;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .project-title {
+            font-size: clamp(20px, 4vw, 48px);
+            font-family: 'Neutral Face', sans-serif;
+            color: #F4F4F4;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-card:hover .project-overlay {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .project-card:hover .project-title {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Логотип">
+                </a>
+            </div>
+            <div class="header-buttons">
+                <button class="btn-contact" id="contactBtn">Связаться</button>
+                <div class="btn-menu" id="menuBtn">
+                    <span class="menu-text">Меню</span>
+                    <div class="menu-icon">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="burger-dropdown" id="burgerDropdown">
+                    <div class="burger-menu">
+                        <a href="index.html">
+                            <span>Главная</span>
+                            <span class="indicator">●</span>
+                        </a>
+                        <a href="about.html">
+                            <span>Обо мне</span>
+                            <span class="indicator">→</span>
+                        </a>
+                        <a href="projects.html">
+                            <span>Проекты</span>
+                            <span class="indicator">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu">
+            <button class="mobile-menu-close" id="mobileMenuClose"></button>
+            <div class="burger-menu">
+                <a href="index.html">
+                    <span>Главная</span>
+                    <span class="indicator">●</span>
+                </a>
+                <a href="about.html">
+                    <span>Обо мне</span>
+                    <span class="indicator">→</span>
+                </a>
+                <a href="projects.html">
+                    <span>Проекты</span>
+                    <span class="indicator">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero секция -->
+    <div class="hero-wrapper">
+        <div class="hero-3d" id="hero3d">
+            <!-- ВСТАВЛЕННОЕ ВИДЕО -->
+            <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+                <source src="images/vid.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+            
+            <!-- РАДИАЛЬНЫЙ ГРАДИЕНТ ДЛЯ ЗАТЕМНЕНИЯ (ТЕМНЫЙ ЦЕНТР) -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%); z-index: 2;"></div>
+            
+            <div class="hero-content" style="position: relative; z-index: 3;">
+                <h1>Привет, я Вика<br>и я 3D-художник</h1>
+                <button class="btn" id="aboutBtn">Узнать обо мне больше</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Секция проектов -->
+    <section class="projects">
+        <div class="grid-container">
+            <h2>Проекты</h2>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Проекты будут добавлены через JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-divider"></div>
+        <div class="footer-content">
+            <div class="footer-col">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Логотип">
+                </a>
+                <a href="mailto:vikkisis88@gmail.com" class="footer-email">vikkisis88@gmail.com</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-year">2026</div>
+                <div class="footer-author">Комар Виктория</div>
+            </div>
+            
+            <div class="footer-col">
+                <a href="https://t.me/Little_Dirty_Snake" target="_blank">
+                    <img src="images/tg.png" alt="Telegram">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <h3>Связаться со мной</h3>
+            <p>Email: vikkisis88@gmail.com<br>Или в <a href="https://t.me/Little_Dirty_Snake" target="_blank">Telegram</a></p>
+            <button class="modal-close" id="closeModalBtn">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Кнопка наверх -->
+    <button class="scroll-top" id="scrollTopBtn">↑</button>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Данные проектов для главной страницы
+        const projects = [
+            { title: "Часы-барабаны", image: "images/preview1.png", link: "project-1.html" },
+            { title: "Стенка ГДР", image: "images/preview2.png", link: "project-2.html" },
+            { title: "Комод", image: "images/preview3.png", link: "project-3.html" },
+            { title: "Чайник", image: "images/preview4.png", link: "project-4.html" },
+            { title: "Электра 1001", image: "images/preview5.png", link: "project-5.html" }
+        ];
+
+        const projectsGrid = document.getElementById('projectsGrid');
+        if (projectsGrid) {
+            projects.forEach((project) => {
+                const card = document.createElement('div');
+                card.className = 'project-card';
+                card.innerHTML = `
+                    <img src="${project.image}" alt="${project.title}">
+                    <div class="project-overlay">
+                        <div class="project-title">${project.title}</div>
+                    </div>
+                `;
+                card.addEventListener('click', () => {
+                    window.location.href = project.link;
+                });
+                projectsGrid.appendChild(card);
+            });
+        }
+
+        // Кнопка "Узнать обо мне больше"
+        const aboutBtn = document.getElementById('aboutBtn');
+        if (aboutBtn) {
+            aboutBtn.addEventListener('click', () => {
+                window.location.href = 'about.html';
+            });
+        }
+    </script>
+</body>
+</html>

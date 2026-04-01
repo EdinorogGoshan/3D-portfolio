@@ -1,0 +1,320 @@
+/* ========== СТРАНИЦА ПРОЕКТА ========== */
+
+/* Запрещаем скролл на всей странице */
+body.project-page {
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+}
+
+/* Фиксируем шапку */
+body.project-page .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1C1C1C;
+    z-index: 1000;
+    pointer-events: auto;
+}
+
+/* Основной контейнер проекта */
+.project-container {
+    display: flex;
+    min-height: 100vh;
+    padding-top: clamp(97px, 5.35vw, 137px);
+}
+
+/* Левая панель - фиксированная */
+.project-info {
+    position: fixed;
+    top: clamp(97px, 5.35vw, 137px);
+    left: 0;
+    width: calc((100% - 24px * 11) / 12 * 4 + 24px * 3);
+    height: calc(100vh - clamp(97px, 5.35vw, 137px));
+    padding-left: clamp(20px, 2.66vw, 68px);
+    padding-right: clamp(16px, 0.94vw, 24px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: hidden;
+}
+
+.info-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: hidden;
+}
+
+.project-title {
+    font-size: clamp(28px, 2.5vw, 64px);
+    font-family: 'Neutral Face', sans-serif;
+    margin-bottom: clamp(40px, 3.13vw, 80px);
+    margin-top: clamp(88px, 4.5vw, 160px);
+}
+
+.project-subtitle {
+    font-size: clamp(20px, 1.25vw, 32px);
+    font-family: 'Neutral Face', sans-serif;
+    margin-bottom: clamp(20px, 1.56vw, 40px);
+    color: #52489C;
+}
+
+.project-description {
+    font-size: clamp(16px, 0.94vw, 24px);
+    line-height: 1.5;
+    margin-bottom: 40px;
+    overflow-y: auto;
+    max-height: 40vh;
+    scrollbar-width: thin;
+}
+
+.project-description::-webkit-scrollbar {
+    width: 4px;
+}
+
+.project-description::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.project-description::-webkit-scrollbar-thumb {
+    background: #52489C;
+    border-radius: 4px;
+}
+
+.project-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(16px, 0.94vw, 24px);
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    flex-shrink: 0;
+    margin-bottom: 36px;
+}
+
+.nav-arrow {
+    width: clamp(32px, 1.88vw, 48px);
+    height: clamp(32px, 1.88vw, 48px);
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-arrow:hover {
+    opacity: 0.7;
+}
+
+.nav-arrow svg {
+    width: clamp(32px, 1.88vw, 48px);
+    height: clamp(32px, 1.88vw, 48px);
+    stroke: #F4F4F4;
+    stroke-width: 2;
+    fill: none;
+}
+
+.nav-arrow.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.project-counter {
+    font-size: clamp(16px, 0.94vw, 24px);
+    font-family: 'Neutral Face', sans-serif;
+    white-space: nowrap;
+}
+
+/* Правая галерея - ЕДИНСТВЕННАЯ скроллящаяся область */
+.project-gallery {
+    margin-left: calc((100% - 24px * 11) / 12 * 4 + 24px * 3);
+    width: calc(100% - ((100% - 24px * 11) / 12 * 4 + 24px * 3));
+    height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    padding-right: clamp(20px, 2.66vw, 68px);
+    -webkit-overflow-scrolling: touch;
+}
+
+.project-gallery::-webkit-scrollbar {
+    width: 6px;
+}
+
+.project-gallery::-webkit-scrollbar-track {
+    background: #292929;
+    border-radius: 3px;
+}
+
+.project-gallery::-webkit-scrollbar-thumb {
+    background: #52489C;
+    border-radius: 3px;
+}
+
+.gallery-content {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(16px, 0.94vw, 24px);
+    padding-bottom: clamp(30px, 1.56vw, 40px);
+    padding-top: clamp(97px, 5.35vw, 137px);
+}
+
+.gallery-item-full {
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.gallery-item-full img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(16px, 0.94vw, 24px);
+}
+
+.gallery-item-half {
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.gallery-item-half img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-3d {
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+    min-height: clamp(300px, 34.18vw, 875px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 88px; /* ДОБАВИТЬ ЭТУ СТРОКУ */
+}
+
+.gallery-3d-placeholder {
+    text-align: center;
+    padding: clamp(30px, 2.34vw, 60px);
+    color: #F4F4F4;
+}
+
+.gallery-3d-placeholder p {
+    font-size: clamp(16px, 0.94vw, 24px);
+    margin-bottom: clamp(12px, 0.78vw, 20px);
+}
+
+/* ========== АДАПТИВ ========== */
+@media (max-width: 1024px) {
+    /* На планшетах убираем фиксацию */
+    body.project-page {
+        overflow: auto;
+        height: auto;
+        position: relative;
+    }
+    
+    body.project-page .header {
+        position: relative;
+    }
+    
+    .project-container {
+        flex-direction: column;
+        padding-top: 0;
+    }
+    
+    .project-info {
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: auto;
+        padding: 0 clamp(20px, 2.66vw, 40px) clamp(30px, 1.56vw, 40px);
+        overflow-y: visible;
+    }
+    
+    .project-gallery {
+        margin-left: 0;
+        width: 100%;
+        height: auto;
+        padding: 0 clamp(20px, 2.66vw, 40px) clamp(30px, 1.56vw, 40px);
+        overflow-y: visible;
+    }
+    
+    .gallery-content {
+        padding-top: 0;
+    }
+    
+    .project-description {
+        max-height: none;
+    }
+}
+/* Для мобильной версии кнопка наверх */
+@media (max-width: 1024px) {
+    .scroll-top {
+        bottom: 20px;
+        right: 20px;
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+        z-index: 1001;
+    }
+}
+
+/* 3D контейнер - полностью заполняет выделенную область */
+.gallery-3d {
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+    min-height: clamp(400px, 34.18vw, 600px);
+    height: auto;
+    position: relative;
+    margin-bottom: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #1D1D1D;
+    border-radius: 18px;
+}
+
+/* Для правильного расчета высоты */
+.gallery-3d::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%; /* Соотношение сторон 16:9, можно изменить */
+}
+
+/* Альтернативный вариант - фиксированная высота через aspect-ratio */
+.gallery-3d {
+    aspect-ratio: 16 / 9; /* Соотношение сторон 16:9 */
+    min-height: auto;
+}
+
+#canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #0a0a1a;
+    border-radius: 18px;
+}

@@ -1,0 +1,327 @@
+/* ========== СТРАНИЦА "ОБО МНЕ" ========== */
+.container {
+    max-width: calc(168px * 12 + 24px * 11);
+    margin: 0 auto;
+    padding: 0 68px;
+}
+
+.about-section {
+    margin-top: 128px;
+}
+
+/* Блок "Кто я?" */
+.whoami {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    margin-bottom: 152px;
+}
+
+.whoami-text {
+    grid-column: span 5;
+}
+
+.whoami-text h1 {
+    font-size: 64px;
+    font-family: 'Neutral Face', sans-serif;
+    margin-bottom: 80px;
+}
+
+.whoami-text p {
+    font-size: 24px;
+    line-height: 1.5;
+    padding-bottom: 40px;
+}
+
+.whoami-image {
+    grid-column: span 7;
+}
+
+.whoami-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    object-fit: cover;
+}
+
+/* Блок направления работы и навыков */
+.direction-skills {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    margin-bottom: 88px;
+}
+
+.direction {
+    grid-column: span 5;
+}
+
+.direction h2 {
+    font-size: 48px;
+    font-family: 'Neutral Face', sans-serif;
+    margin-bottom: 80px;
+}
+
+.direction p {
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.skills {
+    grid-column: span 7;
+}
+
+.skills h2 {
+    font-size: 48px;
+    font-family: 'Neutral Face', sans-serif;
+    margin-bottom: 80px;
+}
+
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin-bottom: 80px;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 97px;
+}
+
+.skill-icon {
+    width: 95px;
+    height: 95px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: transparent;
+}
+
+.skill-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.skill-bar-container {
+    flex: 1;
+    position: relative;
+}
+
+.skill-bar-bg {
+    width: 100%;
+    height: 2.5px;
+    background: rgba(244, 244, 244, 0.2);
+    position: relative;
+}
+
+.skill-bar-fill {
+    width: 0;
+    height: 2.5px;
+    background: #8d84d3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 1.2s ease-out;
+}
+
+.skill-marker {
+    position: absolute;
+    top: -12px;
+    width: 2.5px;
+    height: 24px;
+    background: #8d84d3;
+    transform: translateX(-50%);
+}
+
+.projects-link-wrapper {
+    text-align: right;
+}
+
+.projects-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 24px;
+    color: #F4F4F4;
+    text-decoration: none;
+    font-family: 'Neutral Face', sans-serif;
+    transition: gap 0.3s ease;
+    cursor: pointer;
+}
+
+.projects-link:hover {
+    gap: 24px;
+    color: #52489C;
+}
+
+.projects-link svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+}
+
+/* Блок контактов */
+.contacts {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    margin-bottom: 256px;
+}
+
+.contact-item {
+    grid-column: span 3;
+}
+
+.contact-item h3 {
+    font-size: 32px;
+    font-family: 'Neutral Face', sans-serif;
+    margin-bottom: 80px;
+}
+
+.contact-item .label {
+    font-size: 24px;
+    /*color: #52489C;*/
+    margin-bottom: 40px;
+}
+
+.contact-item .value {
+    font-size: 24px;
+    color: #F4F4F4;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.contact-item .value:hover {
+    color: #52489C;
+}
+
+
+/* Адаптив для about */
+@media (max-width: 1440px) {
+    .container {
+        padding: 0 40px;
+    }
+    .footer {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 40px;
+    }
+    
+    .whoami,
+    .direction-skills,
+    .contacts {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+    
+    .whoami-text,
+    .whoami-image,
+    .direction,
+    .skills,
+    .contact-item {
+        grid-column: span 1;
+    }
+    
+    .whoami-text h1,
+    .direction h2,
+    .skills h2 {
+        font-size: 48px;
+    }
+    
+    .whoami-text p,
+    .direction p,
+    .contact-item .label,
+    .contact-item .value {
+        font-size: 20px;
+    }
+    
+    .skill-item {
+        gap: 48px;
+    }
+    
+    .projects-link-wrapper {
+        text-align: left;
+        margin-top: 40px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        text-align: center;
+    }
+    
+    .footer-col:first-child .logo {
+        margin: 0 auto 60px;
+    }
+    
+    .footer-col:last-child {
+        text-align: center;
+    }
+    
+    .about-section {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .footer {
+        padding: 0 20px;
+    }
+    
+    .about-section {
+        margin-top: 60px;
+    }
+    
+    .whoami-text h1,
+    .direction h2,
+    .skills h2 {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+    
+    .whoami-text p,
+    .direction p {
+        font-size: 18px;
+    }
+    
+    .skill-item {
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+    
+    .skill-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .contact-item h3 {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+    
+    .contact-item .label,
+    .contact-item .value {
+        font-size: 18px;
+    }
+    
+    .footer-email,
+    .footer-year,
+    .footer-author {
+        font-size: 18px;
+    }
+}
